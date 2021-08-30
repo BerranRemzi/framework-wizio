@@ -27,6 +27,8 @@
 
 #define DEBUG_CLIENT //DBG
 
+void * _pCloseServer;
+
 EthernetClient::EthernetClient() : _sock(-1)
 {
 	connect_true = false;

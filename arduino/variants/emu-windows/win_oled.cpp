@@ -71,9 +71,9 @@ void createDisplay()
                          10, 58, 128 * PYXEL_SIZE, 64 * PYXEL_SIZE,
                          hWndMain,
                          NULL,
-                         (HINSTANCE)GetWindowLong(hWndMain, GWL_HINSTANCE),
+                         (HINSTANCE)GetWindowLongPtr(hWndMain, GWLP_HINSTANCE),
                          NULL);
-    oledProc = (WNDPROC)SetWindowLong(hOled, GWL_WNDPROC, (DWORD)OledProc);
+    oledProc = (WNDPROC)SetWindowLongPtr(hOled, GWLP_WNDPROC, (LONG_PTR)OledProc);
 }
 
 uint8_t dsp_mem[64 / 8][128];

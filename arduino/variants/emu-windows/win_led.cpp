@@ -79,11 +79,11 @@ int createLed(int n)
                              34,          // height
                              hWndMain,
                              NULL,
-                             (HINSTANCE)GetWindowLong(hWndMain, GWL_HINSTANCE),
+                             (HINSTANCE)GetWindowLongPtr(hWndMain, GWLP_HINSTANCE),
                              NULL);
     if (!leds[n].h)
         return (0);
-    leds[n].proc = (WNDPROC)SetWindowLong(leds[n].h, GWL_WNDPROC, (DWORD)LedProc);
+    leds[n].proc = (WNDPROC)SetWindowLongPtr(leds[n].h, GWLP_WNDPROC, (LONG_PTR)LedProc);
     leds[n].color = RGB(0, 255, 255);
     leds[n].state = 0;
 }
